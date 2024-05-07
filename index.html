@@ -1,51 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coffee Shop Sales</title>
-    <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-    <header>
-        <h1>Coffee Shop Sales Dashboard</h1>
-    </header>
 
-    <img src="https://storage.googleapis.com/danacita-website-v3-prd/website_v3/images/Revou-alasan.original.png" class="corner-image" alt="Corner Image">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Logo_Kampus_Merdeka_Kemendikbud.png/800px-Logo_Kampus_Merdeka_Kemendikbud.png" class="corner-image2" alt="Corner Image2"> 
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <input class="mobile-input" type="checkbox" id="mobileButton" />
+
+      <div class="side flex">
+        <div class="mobile-btn">
+          <label class="flex" for="mobileButton">
+            <ion-icon name="grid-outline"></ion-icon>
+          </label>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar flex-d flex-c">
+                <div class="sidebar-logo flex">
+                    <span>D</span>
+                </div>
     
-    <div class="wrapper">
-        <div class="card">
-            <!-- Konten Card 1 -->
-        </div>
-        <div class="card">
-            <!-- Konten Card 2 -->
-        </div>
-        <div class="card">
-            <!-- Konten Card 3 -->
-        </div>
-        <div class="card">
-            <!-- Konten Card 4 -->
-        </div>
-        <div class="card">
-            <!-- Konten Card 5 -->
-        </div>
-        <div class="card">
-            <!-- Konten Card 6 -->
-        </div>
-        <div class="card">
-            <!-- Konten Card 7 -->
-        </div>
-        <div class="card">
-            <!-- Konten Card 8 -->
-        </div>
-        <div class="card">
-            <!-- Konten Card 9 -->
-        </div>
-    </div>
+                <div class="sidebar-center flex flex-c">
+                    <div class="icon flex">
+                        <ion-icon name="grid"></ion-icon>
+                      </div>
+                      <div class="icon flex">
+                        <ion-icon name="podium"></ion-icon>
+                      </div>
+                      <div class="icon flex">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                      </div>
+                </div>
+    
+                <div class="sidebar-bottom flex flex-c">
+                    <div class="icon flex">
+                        <ion-icon name="cog-outline"></ion-icon>
+                    </div>
+                    <div class="icon flex">
+                        <ion-icon name="bug-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>    
+        <!-- End Sidebar -->
+        </aside>
+        
 
-    <footer>
+      <!-- Main Content -->
+      <div class="main flex-d flex-c">
+        <div class="main-top flex-d">
+          <h1>Coffee Shop Sales Dashboard</h1>
+
+          <div class="main-top-left flex">
+            <div class="search flex">
+              <ion-icon name="search-outline" class="icon-btn"></ion-icon>
+              <input type="text" placeholder="Search" />
+            </div>
+
+            <div class="user flex">
+              <ion-icon
+                name="person-circle-outline"
+                class="icon-btn"
+              ></ion-icon>
+              <h4>Team-20-Palembang</h4>
+            </div>
+          </div>
+        </div>
+        <div class="main-bottom flex-d">
+          <div class="main-bottom-left flex flex-c">
+            <div class="graph">
+              <h2>Rata-rata Harga</h2>
+              <img src="img/graph.png" alt="" />
+              <a href="#" class="btn">See Details</a>
+            </div>
+            
+            <div class="graph">
+                <h2>Total Penjualan</h2>
+                <img src="img/graph.png" alt="" />
+                <a href="#" class="btn">See Details</a>
+              </div>
+
+            <div class="graph">
+              <h2>Jumlah Varian dan Total Varian</h2>
+              <img src="img/graph.png" alt="" />
+              <a href="#" class="btn">See Details</a>
+            </div>
+
+            <div class="graph">
+                <h2>Varian Product Per Category</h2>
+                <img src="img/graph.png" alt="" />
+                <a href="#" class="btn">See Details</a>
+              </div>
+
+            <div class="graph">
+              <h2>Penjualan Bakery</h2>
+              <img src="img/graph.png" alt="" />
+              <a href="#" class="btn">See Details</a>
+            </div>
+
+            <div class="graph">
+                <h2>Penjualan Scone Per hari</h2>
+                <img src="img/graph.png" alt="" />
+                <a href="#" class="btn">See Details</a>
+            </div>
+
+            <div class="graph">
+                <h2>Penjualan Drinking Chocolate Per hari</h2>
+                <img src="img/graph.png" alt="" />
+                <a href="#" class="btn">See Details</a>
+            </div>
+        </div>
+      </div>
+      
+      <footer>
         <p>Team-20-Palembang</p>
-    </footer>
-</body>
+      </footer>
+      <!-- End Main Content -->
+    </div>
+    <!-- End App -->
+
+    <!-- Ion Icons Js -->
+    <script
+      type="module"
+      src=""
+    ></script>
+    <script
+      nomodule
+      src=""
+    ></script>
+  </body>
 </html>
