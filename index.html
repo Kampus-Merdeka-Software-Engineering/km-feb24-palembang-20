@@ -9,6 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+  
   <aside class="side">
     <div class="sidebar">
       <div class="side-logo">
@@ -71,7 +72,6 @@
               <span class="link_names">Penjualan Drinking Chocolate Per hari</span>
             </a>
           </li>
-          <li>
         </ul>
       </nav>
     </div>
@@ -112,31 +112,21 @@
         <canvas id="penjualanDrinkingChocolateChart"></canvas>
       </article>
       
-      <article class="table">
-        <h2>Data Penjualan Per Store</h2>
-        <div class="filter">
-          <select id="filterSelect">
-            <option value="">Semua</option>
-            <option value="Hell's Kitchen">Hell's Kitchen</option>
-            <option value="Astoria">Astoria</option>
-            <option value="Lower Manhattan">Lower Manhattan</option>
-          </select>
-        </div>
-        <table id="salesTable">
+      <article>
+        <input type="text" id="table-search-input" placeholder="Search">
+        <table>
+          <h2>Coffee Shop Product</h2>
           <thead>
             <tr>
-              <th>Store Location</th>
-              <th>Product Category</th>
-              <th>Total Penjualan</th>
+              <th>ID</th>
+              <th>Category</th>
+              <th>Type</th>
+              <th id="sort-product-detail">Detail <span id="sort-icon"></span></th>
             </tr>
           </thead>
-          <tbody>
-            </tbody>
+          <tbody id="table-body"></tbody>
         </table>
-        <div class="pagination">
-          <button id="prevPage" class="disabled">Previous</button>
-          <button id="nextPage">Next</button>
-        </div>
+        <div id="pagination" class="pagination"></div>
       </article>
     </section>
 
@@ -144,6 +134,7 @@
       <p>&copy;Team20Palembang</p>
     </footer>
   </main>
+  <script src="pagination.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
