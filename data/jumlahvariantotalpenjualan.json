@@ -1,0 +1,11 @@
+[
+    {"product_category": "Packaged Chocolate", "Num_Variant": 2, "total_penjualan": 487},
+    {"product_category": "Branded", "Num_Variant": 2, "total_penjualan": 776},
+    {"product_category": "Loose Tea", "Num_Variant": 4, "total_penjualan": 1210},
+    {"product_category": "Coffee beans", "Num_Variant": 6, "total_penjualan": 1828},
+    {"product_category": "Flavours", "Num_Variant": 2, "total_penjualan": 10511},
+    {"product_category": "Drinking Chocolate", "Num_Variant": 1, "total_penjualan": 17457},
+    {"product_category": "Bakery", "Num_Variant": 3, "total_penjualan": 23214},
+    {"product_category": "Tea", "Num_Variant": 4, "total_penjualan": 69737},
+    {"product_category": "Coffee", "Num_Variant": 5, "total_penjualan": 89250}
+]

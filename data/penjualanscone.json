@@ -1,0 +1,17 @@
+[
+    {"hour_of_day": 6, "transaction_count": 358},
+    {"hour_of_day": 7, "transaction_count": 993},
+    {"hour_of_day": 8, "transaction_count": 1229},
+    {"hour_of_day": 9, "transaction_count": 1272},
+    {"hour_of_day": 10, "transaction_count": 1338},
+    {"hour_of_day": 11, "transaction_count": 724},
+    {"hour_of_day": 12, "transaction_count": 616},
+    {"hour_of_day": 13, "transaction_count": 506},
+    {"hour_of_day": 14, "transaction_count": 669},
+    {"hour_of_day": 15, "transaction_count": 669},
+    {"hour_of_day": 16, "transaction_count": 619},
+    {"hour_of_day": 17, "transaction_count": 564},
+    {"hour_of_day": 18, "transaction_count": 453},
+    {"hour_of_day": 19, "transaction_count": 411},
+    {"hour_of_day": 20, "transaction_count": 44}
+]
