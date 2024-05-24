@@ -1,71 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const salesData = [
-      { location: "Hell's Kitchen", category: "Coffee", sales: 20187 },
-      { location: "Astoria", category: "Coffee", sales: 20025 },
-      { location: "Lower Manhattan", category: "Coffee", sales: 18204 },
-      { location: "Astoria", category: "Tea", sales: 16260 },
-      { location: "Hell's Kitchen", category: "Tea", sales: 15277 },
-      { location: "Lower Manhattan", category: "Tea", sales: 13912 },
-      { location: "Lower Manhattan", category: "Bakery", sales: 7890 },
-      { location: "Hell's Kitchen", category: "Bakery", sales: 7617 },
-      { location: "Astoria", category: "Bakery", sales: 7289 },
-      { location: "Astoria", category: "Drinking Chocolate", sales: 4300 },
-      { location: "Hell's Kitchen", category: "Drinking Chocolate", sales: 3763 },
-      { location: "Lower Manhattan", category: "Drinking Chocolate", sales: 3405 },
-      { location: "Lower Manhattan", category: "Flavours", sales: 2930 },
-      { location: "Hell's Kitchen", category: "Flavours", sales: 2370 },
-      { location: "Astoria", category: "Flavours", sales: 1490 },
-      { location: "Hell's Kitchen", category: "Coffee beans", sales: 720 },
-      { location: "Lower Manhattan", category: "Coffee beans", sales: 531 },
-      { location: "Astoria", category: "Coffee beans", sales: 502 },
-      { location: "Hell's Kitchen", category: "Loose Tea", sales: 485 },
-      { location: "Lower Manhattan", category: "Loose Tea", sales: 381 },
-      { location: "Lower Manhattan", category: "Branded", sales: 349 },
-      { location: "Astoria", category: "Loose Tea", sales: 344 },
-      { location: "Astoria", category: "Branded", sales: 279 },
-      { location: "Hell's Kitchen", category: "Packaged Chocolate", sales: 197 },
-      { location: "Lower Manhattan", category: "Packaged Chocolate", sales: 180 },
-      { location: "Hell's Kitchen", category: "Branded", sales: 119 },
-      { location: "Astoria", category: "Packaged Chocolate", sales: 110 }
-    ];
-  
-    const rowsPerPage = 10;
-    let currentPage = 1;
-  
-    function displayTable(data, page) {
-      const tableBody = document.querySelector("#salesTable tbody");
-      tableBody.innerHTML = "";
-  
-      const start = (page - 1) * rowsPerPage;
-      const end = page * rowsPerPage;
-      const paginatedData = data.slice(start, end);
-  
-      paginatedData.forEach(row => {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `<td>${row.location}</td><td>${row.category}</td><td>${row.sales}</td>`;
-        tableBody.appendChild(tr);
-      });
-  
-      document.getElementById("prevPage").classList.toggle("disabled", page === 1);
-      document.getElementById("nextPage").classList.toggle("disabled", end >= data.length);
-    }
-  
-    document.getElementById("prevPage").addEventListener("click", () => {
-      if (currentPage > 1) {
-        currentPage--;
-        displayTable(salesData, currentPage);
-      }
-    });
-  
-    document.getElementById("nextPage").addEventListener("click", () => {
-      if (currentPage * rowsPerPage < salesData.length) {
-        currentPage++;
-        displayTable(salesData, currentPage);
-      }
-    });
-  
-    displayTable(salesData, currentPage);
-  
+
     // Membuat grafik untuk total penjualan
     fetch("data/totalpenjualan.json")
       .then(response => response.json())
@@ -289,5 +222,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       })
       .catch(error => console.error("Error loading data: ", error));
-  });
+
   
