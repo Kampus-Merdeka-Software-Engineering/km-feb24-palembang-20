@@ -1,33 +1,64 @@
-
-    // Membuat grafik untuk total penjualan
-    fetch("data/totalpenjualan.json")
-      .then(response => response.json())
-      .then(data => {
-        const ctxTotalPenjualan = document.getElementById("totalPenjualanChart").getContext("2d");
-        const totalPenjualanChart = new Chart(ctxTotalPenjualan, {
-          type: "bar",
-          data: {
-            labels: data.map(item => item.product_type),
-            datasets: [{
-              label: "Total Penjualan",
-              data: data.map(item => item['total_penjualan']),
-              backgroundColor: "rgba(153, 102, 255, 0.2)",
-              borderColor: "rgba(153, 102, 255, 1)",
-              borderWidth: 1
-            }]
-          },
-          options: {
-            responsive: true,
-            scales: {
-              y: {
-                beginAtZero: true
-              }
+//updatefilter total penjualan
+let totalPenjualanChart;
+// Mengambil dan merender grafik total penjualan
+const fetchAndRenderTotalPenjualanChart = (filterValue = "") => {
+  fetch("data/totalpenjualan.json")
+    .then(response => response.json())
+    .then(data => {
+      const filteredData = filterValue ? data.filter(item => item.product_type === filterValue) : data;
+      if (totalPenjualanChart) {
+        totalPenjualanChart.destroy();
+      }
+      const ctxTotalPenjualan = document.getElementById("totalPenjualanChart").getContext("2d");
+      totalPenjualanChart = new Chart(ctxTotalPenjualan, {
+        type: "bar",
+        data: {
+          labels: filteredData.map(item => item.product_type),
+          datasets: [{
+            label: "Total Penjualan",
+            data: filteredData.map(item => item['total_penjualan']),
+            backgroundColor: "rgba(153, 102, 255, 0.2)",
+            borderColor: "rgba(153, 102, 255, 1)",
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true
             }
           }
-        });
-      })
-      .catch(error => console.error("Error loading data: ", error));
-  
+        }
+      });
+    })
+    .catch(error => console.error("Error loading data: ", error));
+};
+
+// Membuat untuk filter dropdown dan rendering grafik awal
+  fetch("data/totalpenjualan.json")
+    .then(response => response.json())
+    .then(data => {
+      // Filter options
+      const filterSelect = document.getElementById('totalPenjualanFilter');
+      const productTypes = [...new Set(data.map(item => item.product_type))];
+      productTypes.forEach(type => {
+        const option = document.createElement('option');
+        option.value = type;
+        option.textContent = type;
+        filterSelect.appendChild(option);
+      });
+
+      // Melakukan render awal
+      fetchAndRenderTotalPenjualanChart();
+      // event listener
+      filterSelect.addEventListener('change', (event) => {
+        const selectedType = event.target.value;
+        fetchAndRenderTotalPenjualanChart(selectedType);
+      });
+    })
+    .catch(error => console.error("Error loading data: ", error));
+
     // Membuat grafik untuk rata-rata harga
     fetch("data/ratarata.json")
       .then(response => response.json())
