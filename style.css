@@ -80,6 +80,7 @@ section {
   gap: 20px;
   background: #dce5f3;
   border-radius: 30px;
+  margin-bottom: 26px;
 }
 
 .graph {
@@ -185,4 +186,8 @@ th {
   padding: 5px;
   width: 30%;
   box-sizing: border-box;
+  float: right;
+  border: none;
+  border-radius: 6px;
+  outline: 1px solid rgba(0, 0, 0, 0.2);
 }
