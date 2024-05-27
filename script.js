@@ -1,5 +1,6 @@
-//updatefilter total penjualan
+
 let totalPenjualanChart;
+
 // Mengambil dan merender grafik total penjualan
 const fetchAndRenderTotalPenjualanChart = (filterValue = "") => {
   fetch("data/totalpenjualan.json")
@@ -253,5 +254,3 @@ const fetchAndRenderTotalPenjualanChart = (filterValue = "") => {
         });
       })
       .catch(error => console.error("Error loading data: ", error));
-
-  
