@@ -25,7 +25,7 @@ body {
   padding: 20px 0;
   position: fixed;
   left: 0;
-  height: 100vh; /* Membuat sidebar full height */
+  height: 100vh; 
 }
 
 .sidebar h2 {
@@ -80,7 +80,7 @@ nav {
   width: 100%;
   padding: 15px;
   background-color: white;
-  margin-left: 270px; /* Menyesuaikan margin kiri untuk konten utama */
+  margin-left: 270px; 
 }
 
 header {
@@ -213,7 +213,7 @@ th {
     width: 100%;
     position: relative;
     left: 0;
-    height: auto; /* Sesuaikan tinggi sidebar untuk mobile */
+    height: auto; 
   }
 
   .main {
