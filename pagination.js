@@ -1,6 +1,6 @@
 const itemsPerPage = 10; // Number of items per page
 let currentPage = 1; // Current page
-const maxButtons = 5;
+const maxButtons = 4;
 let sortDirection = '';
 let currentSortColumn = '';
 
@@ -13,6 +13,7 @@ fetch('data/product.json')
         const pagination = document.getElementById('pagination');
         const tableSearchInput = document.getElementById('table-search-input');
         const sortProductDetailHeader = document.getElementById('sort-product-detail');
+        const sortTotalPenjualanHeader = document.getElementById('sort-total-penjualan');
 
         // Function to search data by product name in the table
         function handleSearchData(event) {
@@ -37,6 +38,7 @@ fetch('data/product.json')
                     <td>${item.product_category}</td>
                     <td>${item.product_type}</td>
                     <td>${item.product_detail}</td>
+                    <td>${item.total_penjualan}</td>
                 `;
                 tableBody.appendChild(row);
             });
@@ -52,12 +54,20 @@ fetch('data/product.json')
             }
 
             sortedData.sort((a, b) => {
-                const valueA = a[column].toLowerCase();
-                const valueB = b[column].toLowerCase();
-                if (sortDirection === 'asc') {
-                    return valueA.localeCompare(valueB);
+                const valueA = a[column];
+                const valueB = b[column];
+                if (column === 'total_penjualan') {
+                    if (sortDirection === 'asc') {
+                        return valueA - valueB;
+                    } else {
+                        return valueB - valueA;
+                    }
                 } else {
-                    return valueB.localeCompare(valueA);
+                    if (sortDirection === 'asc') {
+                        return valueA.toLowerCase().localeCompare(valueB.toLowerCase());
+                    } else {
+                        return valueB.toLowerCase().localeCompare(valueA.toLowerCase());
+                    }
                 }
             });
 
@@ -69,8 +79,17 @@ fetch('data/product.json')
 
         // Function to update the sorting icon based on the current sort direction
         function updateSortIcon(column) {
-            sortProductDetailHeader.innerHTML = 'Detail';
-            sortProductDetailHeader.innerHTML += currentSortColumn === column ? (sortDirection === 'asc' ? ' &#x25B2;' : ' &#x25BC;') : '';
+            const sortIconDetail = document.getElementById('sort-icon-detail');
+            const sortIconPenjualan = document.getElementById('sort-icon-penjualan');
+            
+            sortIconDetail.innerHTML = '';
+            sortIconPenjualan.innerHTML = '';
+            
+            if (column === 'product_detail') {
+                sortIconDetail.innerHTML = sortDirection === 'asc' ? ' &#x25B2;' : ' &#x25BC;';
+            } else if (column === 'total_penjualan') {
+                sortIconPenjualan.innerHTML = sortDirection === 'asc' ? ' &#x25B2;' : ' &#x25BC;';
+            }
         }
 
         // Function to display pagination
@@ -113,6 +132,11 @@ fetch('data/product.json')
             sortByColumn('product_detail');
         });
 
-        tableSearchInput.addEventListener('input', handleSearchData)
+        // Event listener for toggling sort direction when total penjualan header is clicked
+        sortTotalPenjualanHeader.addEventListener('click', () => {
+            sortByColumn('total_penjualan');
+        });
+
+        tableSearchInput.addEventListener('input', handleSearchData);
     })
     .catch(error => console.error('Error fetching data:', error));
