@@ -15,20 +15,45 @@ body {
   flex-direction: column;
 }
 
-.side {
-  width: 100%;
-  height: auto;
-  background-color: #07919b;
-  transition: 0.3s;
-  position: relative;
-}
-
 .sidebar {
-  width: 100%;
-  height: auto;
+  width: 250px;
+  background-color: #07919b;
+  color: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  height: 100vh; /* Membuat sidebar full height */
 }
 
-nav{
+.sidebar h2 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.sidebar a {
+  color: #ecf0f1;
+  text-decoration: none;
+  padding: 10px 15px;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #0670da;
+}
+
+.sidebar .active {
+  background-color: #07919b;
+}
+
+nav {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +61,7 @@ nav{
   margin-top: 20px;
 }
 
-.sidebar ul{
+.sidebar ul {
   list-style: none;
   padding: 0;
 }
@@ -45,7 +70,8 @@ nav{
   margin: 20px 0;
 }
 
-.corner-image, .corner-image2 {
+.corner-image,
+.corner-image2 {
   width: 50px;
   height: auto;
 }
@@ -54,6 +80,7 @@ nav{
   width: 100%;
   padding: 15px;
   background-color: white;
+  margin-left: 270px; /* Menyesuaikan margin kiri untuk konten utama */
 }
 
 header {
@@ -112,7 +139,8 @@ table {
   table-layout: fixed;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #dddddd;
   padding: 8px;
 }
@@ -153,15 +181,14 @@ th {
     flex-direction: row;
   }
 
-  .side {
-    width: 20%;
-    height: 100vh;
-    position: fixed;
+  .sidebar {
+    width: 250px;
+    left: 0;
   }
 
   .main {
-    width: 80%;
-    margin-left: 20%;
+    width: calc(100% - 270px);
+    margin-left: 270px;
   }
 
   header {
@@ -178,6 +205,20 @@ th {
 
   .graph {
     width: 48%;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    width: 100%;
+    position: relative;
+    left: 0;
+    height: auto; /* Sesuaikan tinggi sidebar untuk mobile */
+  }
+
+  .main {
+    width: 100%;
+    margin-left: 0;
   }
 }
 
