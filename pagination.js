@@ -14,6 +14,9 @@ fetch('data/product.json')
         const tableSearchInput = document.getElementById('table-search-input');
         const sortProductDetailHeader = document.getElementById('sort-product-detail');
         const sortTotalPenjualanHeader = document.getElementById('sort-total-penjualan');
+        const sortIdHeader = document.getElementById('sort-id');
+        const sortCategoryHeader = document.getElementById('sort-category');
+        const sortTypeHeader = document.getElementById('sort-type');
 
         // Function to search data by product name in the table
         function handleSearchData(event) {
@@ -56,7 +59,7 @@ fetch('data/product.json')
             sortedData.sort((a, b) => {
                 const valueA = a[column];
                 const valueB = b[column];
-                if (column === 'total_penjualan') {
+                if (column === 'total_penjualan' || column === 'product_id') {
                     if (sortDirection === 'asc') {
                         return valueA - valueB;
                     } else {
@@ -79,16 +82,20 @@ fetch('data/product.json')
 
         // Function to update the sorting icon based on the current sort direction
         function updateSortIcon(column) {
-            const sortIconDetail = document.getElementById('sort-icon-detail');
-            const sortIconPenjualan = document.getElementById('sort-icon-penjualan');
+            const sortIcons = {
+                'product_detail': document.getElementById('sort-icon-detail'),
+                'total_penjualan': document.getElementById('sort-icon-penjualan'),
+                'product_id': document.getElementById('sort-icon-id'),
+                'product_category': document.getElementById('sort-icon-category'),
+                'product_type': document.getElementById('sort-icon-type')
+            };
             
-            sortIconDetail.innerHTML = '';
-            sortIconPenjualan.innerHTML = '';
+            Object.keys(sortIcons).forEach(key => {
+                sortIcons[key].innerHTML = '';
+            });
             
-            if (column === 'product_detail') {
-                sortIconDetail.innerHTML = sortDirection === 'asc' ? ' &#x25B2;' : ' &#x25BC;';
-            } else if (column === 'total_penjualan') {
-                sortIconPenjualan.innerHTML = sortDirection === 'asc' ? ' &#x25B2;' : ' &#x25BC;';
+            if (sortIcons[column]) {
+                sortIcons[column].innerHTML = sortDirection === 'asc' ? ' &#x25B2;' : ' &#x25BC;';
             }
         }
 
@@ -127,12 +134,23 @@ fetch('data/product.json')
         displayItems();
         displayPagination();
 
-        // Event listener for toggling sort direction when product detail header is clicked
+        // Event listeners for sorting columns
+        sortIdHeader.addEventListener('click', () => {
+            sortByColumn('product_id');
+        });
+
+        sortCategoryHeader.addEventListener('click', () => {
+            sortByColumn('product_category');
+        });
+
+        sortTypeHeader.addEventListener('click', () => {
+            sortByColumn('product_type');
+        });
+
         sortProductDetailHeader.addEventListener('click', () => {
             sortByColumn('product_detail');
         });
 
-        // Event listener for toggling sort direction when total penjualan header is clicked
         sortTotalPenjualanHeader.addEventListener('click', () => {
             sortByColumn('total_penjualan');
         });
