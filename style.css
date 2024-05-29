@@ -16,7 +16,7 @@ body {
 }
 
 .sidebar {
-  width: 250px;
+  width: 300px; 
   background-color: #07919b;
   color: #ecf0f1;
   display: flex;
@@ -43,6 +43,10 @@ body {
   box-sizing: border-box;
   font-size: 18px;
   transition: background-color 0.3s;
+}
+
+.link_names {
+  font-size: 0.9em; 
 }
 
 .sidebar a:hover {
@@ -72,7 +76,7 @@ nav {
 
 .corner-image,
 .corner-image2 {
-  width: 50px;
+  width: 53px;
   height: auto;
 }
 
@@ -80,7 +84,7 @@ nav {
   width: 100%;
   padding: 15px;
   background-color: white;
-  margin-left: 270px; 
+  margin-left: 320px; 
 }
 
 header {
@@ -182,13 +186,13 @@ th {
   }
 
   .sidebar {
-    width: 250px;
+    width: 319px; 
     left: 0;
   }
 
   .main {
-    width: calc(100% - 270px);
-    margin-left: 270px;
+    width: calc(100% - 320px); 
+    margin-left: 320px;
   }
 
   header {
