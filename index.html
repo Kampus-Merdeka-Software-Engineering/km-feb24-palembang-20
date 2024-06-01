@@ -12,6 +12,7 @@
   <script src="script.js"></script>
 </head>
 <body>
+  
   <aside class="side">
     <div class="sidebar">
       <div class="side-logo">
@@ -47,7 +48,7 @@
           <li>
             <a href="#jumlah-varian">
               <i class="fa-solid fa-home"></i>
-              <span class="link_names">Jumlah Varian dan Total Varian</span>
+              <span class="link_names">Jumlah Varian dan Total Penjualan</span>
             </a>
           </li>
           <li>
@@ -74,6 +75,12 @@
               <span class="link_names">Penjualan Drinking Chocolate Per hari</span>
             </a>
           </li>
+          <li>
+            <a href="#product-table">
+              <i class="fa-solid fa-home"></i>
+              <span class="link_names">Coffee Shop Product</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -89,15 +96,11 @@
         <h2>Rata-rata Harga</h2>
         <canvas id="rataRataHargaChart"></canvas>
       </article>
-      <article id="total-penjualan" class="graph">
-        <h2>Total Penjualan</h2>
-        <select id="totalPenjualanFilter">
-          <option value="">All Product Types</option>
-        </select>
-        <canvas id="totalPenjualanChart"></canvas>
-      </article>
       <article id="jumlah-varian" class="graph">
-        <h2>Jumlah Varian dan Total Varian</h2>
+        <h2>Jumlah Varian dan Total Penjualan</h2>
+        <select id="jumlahVarianFilter">
+          <option value="">All Product Categories</option>
+        </select>
         <canvas id="jumlahVarianChart"></canvas>
       </article>
       <article id="varian-product" class="graph">
@@ -116,25 +119,32 @@
         <h2>Penjualan Drinking Chocolate Per hari</h2>
         <canvas id="penjualanDrinkingChocolateChart"></canvas>
       </article>
+      <article id="total-penjualan" class="graph1">
+        <h2>Total Penjualan</h2>
+        <select id="totalPenjualanFilter">
+          <option value="">All Product Types</option>
+        </select>
+        <canvas id="totalPenjualanChart"></canvas>
+      </article>
     </section>
 
-      <article>
-        <input type="text" id="table-search-input" placeholder="Search Product Detail">
-        <table>
-          <h2>Coffee Shop Product</h2>
-          <thead>
-            <tr>
-              <th id="sort-id">ID <span id="sort-icon-id"></span></th>
-              <th id="sort-category">Category <span id="sort-icon-category"></span></th>
-              <th id="sort-type">Type <span id="sort-icon-type"></span></th>
-              <th id="sort-product-detail">Detail <span id="sort-icon-detail"></span></th>
-              <th id="sort-total-penjualan">Total Penjualan <span id="sort-icon-penjualan"></span></th>
-          </thead>
-          <tbody id="table-body"></tbody>
-        </table>
-        <div id="pagination" class="pagination"></div>
-      </article>
-      
+    <article id="product-table">
+      <input type="text" id="table-search-input" placeholder="Search Product Detail">
+      <table>
+        <h2>Coffee Shop Product</h2>
+        <thead>
+          <tr>
+            <th id="sort-id">ID <span id="sort-icon-id"></span></th>
+            <th id="sort-category">Category <span id="sort-icon-category"></span></th>
+            <th id="sort-type">Type <span id="sort-icon-type"></span></th>
+            <th id="sort-product-detail">Detail <span id="sort-icon-detail"></span></th>
+            <th id="sort-total-penjualan">Total Penjualan <span id="sort-icon-penjualan"></span></th>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+      <div id="pagination" class="pagination"></div>
+    </article>
+    
     <footer class="footer">
       <p>&copy;Team20Palembang</p>
     </footer>

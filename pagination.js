@@ -123,6 +123,9 @@ fetch('data/product.json')
         function createPaginationButton(label, pageNumber) {
             const button = document.createElement('button');
             button.textContent = label;
+            if (pageNumber === currentPage) {
+                button.classList.add('active');
+            }
             button.addEventListener('click', () => {
                 currentPage = pageNumber;
                 displayItems();

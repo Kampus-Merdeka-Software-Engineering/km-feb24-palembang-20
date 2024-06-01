@@ -22,7 +22,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0;
   position: fixed;
   left: 0;
   height: 100vh; 
@@ -43,6 +42,11 @@ body {
   box-sizing: border-box;
   font-size: 18px;
   transition: background-color 0.3s;
+}
+
+.sidebar a.active {
+  background-color: #032735;;
+  font-weight: bold;
 }
 
 .link_names {
@@ -78,6 +82,7 @@ nav {
 .corner-image2 {
   width: 53px;
   height: auto;
+  margin-top: 20px;
 }
 
 .main {
@@ -120,6 +125,21 @@ section {
   border-radius: 15px;
 }
 
+.graph1 {     /* grafik total penjualan */
+  width: 100%;
+  height:auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  transition: transform 0.3s linear;
+  transform: translateY(-5px);
+}
+
+.graph1:hover {
+  transition: transform 0.3s linear;
+  transform: translateY(-5px);
+}
+
 .graph:hover {
   transition: 0.3s linear;
   transform: translateY(-5px);
@@ -141,12 +161,14 @@ table {
   border-collapse: collapse;
   width: 100%;
   table-layout: fixed;
+  border-radius: 10px;
 }
 
 th,
 td {
   border: 1px solid #dddddd;
   padding: 8px;
+  border-radius: 5px;
 }
 
 th {
@@ -178,6 +200,12 @@ th {
   background-color: #cccccc;
   cursor: not-allowed;
 }
+
+.pagination button.active {
+  background-color: #032735;
+  font-weight: bold;
+}
+
 
 /* Media Queries for Responsiveness */
 @media (min-width: 768px) {
