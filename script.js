@@ -266,7 +266,7 @@ fetch("data/penjualanscone.json")
       data: {
         labels: data.map(item => item.hour_of_day),
         datasets: [{
-          label: "Penjualan Scone per Hari",
+          label: "Penjualan Scone per Jam",
           data: data.map(item => item['transaction_count']),
           backgroundColor: "rgba(54, 162, 235, 0.2)",
           borderColor: "rgba(54, 162, 235, 1)",
@@ -295,7 +295,7 @@ fetch("data/drinkingchocolateperhari.json")
       data: {
         labels: data.map(item => item.hour_of_day),
         datasets: [{
-          label: "Penjualan Drinking Chocolate per Hari",
+          label: "Penjualan Drinking Chocolate per Jam",
           data: data.map(item => item['transaction_count']),
           backgroundColor: "rgba(75, 192, 192, 0.2)",
           borderColor: "rgba(75, 192, 192, 1)",
