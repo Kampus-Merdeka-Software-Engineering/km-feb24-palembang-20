@@ -14,7 +14,8 @@
 <body>
   
   <aside class="side">
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
+      <a href="javascript:void(0)" class="closebtn" id="closebtn">&times;</a>
       <div class="side-logo">
         <img src="https://storage.googleapis.com/danacita-website-v3-prd/website_v3/images/Revou-alasan.original.png" class="corner-image" alt="Corner Image">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Logo_Kampus_Merdeka_Kemendikbud.png/800px-Logo_Kampus_Merdeka_Kemendikbud.png" class="corner-image2" alt="Corner Image2"> 
@@ -89,11 +90,12 @@
   <main class="main">
     <header>
       <h1>Coffee Shop Sales Dashboard</h1>
+      <span id="hamburger" class="hamburger">&#9776;</span>
     </header>
 
     <section>
       <article id="rata-rata-harga" class="graph">
-        <h2>Rata-rata Harga</h2>
+        <h2>Rata-rata Harga Product Per Category</h2>
         <canvas id="rataRataHargaChart"></canvas>
       </article>
       <article id="jumlah-varian" class="graph">
@@ -120,7 +122,7 @@
         <canvas id="penjualanDrinkingChocolateChart"></canvas>
       </article>
       <article id="total-penjualan" class="graph1">
-        <h2>Total Penjualan</h2>
+        <h2>Total Penjualan Per Product Types</h2>
         <select id="totalPenjualanFilter">
           <option value="">All Product Types</option>
         </select>

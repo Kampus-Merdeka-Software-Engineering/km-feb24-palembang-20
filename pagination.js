@@ -160,4 +160,3 @@ fetch('data/product.json')
 
         tableSearchInput.addEventListener('input', handleSearchData);
     })
-    .catch(error => console.error('Error fetching data:', error));

@@ -16,7 +16,7 @@ body {
 }
 
 .sidebar {
-  width: 300px; 
+  width: 300px;
   background-color: #07919b;
   color: #ecf0f1;
   display: flex;
@@ -24,7 +24,8 @@ body {
   align-items: center;
   position: fixed;
   left: 0;
-  height: 100vh; 
+  height: 100vh;
+  z-index: 1;
 }
 
 .sidebar h2 {
@@ -45,12 +46,12 @@ body {
 }
 
 .sidebar a.active {
-  background-color: #032735;;
+  background-color: #07919b;
   font-weight: bold;
 }
 
 .link_names {
-  font-size: 0.9em; 
+  font-size: 0.9em;
 }
 
 .sidebar a:hover {
@@ -89,7 +90,7 @@ nav {
   width: 100%;
   padding: 15px;
   background-color: white;
-  margin-left: 320px; 
+  margin-left: 320px;
 }
 
 header {
@@ -125,9 +126,9 @@ section {
   border-radius: 15px;
 }
 
-.graph1 {     /* grafik total penjualan */
+.graph1 {
   width: 100%;
-  height:auto;
+  height: auto;
   background: #fff;
   padding: 15px;
   border-radius: 15px;
@@ -206,20 +207,19 @@ th {
   font-weight: bold;
 }
 
-
-/* Media Queries for Responsiveness */
+/* Media Queries for Responsiveness Mobile */
 @media (min-width: 768px) {
   body {
     flex-direction: row;
   }
 
   .sidebar {
-    width: 319px; 
+    width: 319px;
     left: 0;
   }
 
   .main {
-    width: calc(100% - 320px); 
+    width: calc(100% - 320px);
     margin-left: 320px;
   }
 
@@ -238,6 +238,14 @@ th {
   .graph {
     width: 48%;
   }
+
+  .hamburger {
+    display: none;
+  }
+
+  .closebtn {
+    display: none; 
+  }
 }
 
 @media (max-width: 767px) {
@@ -245,15 +253,42 @@ th {
     width: 100%;
     position: relative;
     left: 0;
-    height: auto; 
+    height: auto;
+    justify-content: center;
   }
+  
 
   .main {
     width: 100%;
     margin-left: 0;
   }
-}
 
+  .hamburger {
+    display: block; 
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .closebtn {
+    display: block; 
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background: none; 
+    border: none; 
+    padding: 0;
+  }
+
+  .corner-image,
+  .corner-image2 {
+    width: 53px;
+    height: auto;
+    margin-top: 60px;
+  }
+}
 #table-search-input {
   margin-bottom: 5px;
   padding: 5px;

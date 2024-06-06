@@ -32,7 +32,6 @@ const fetchAndRenderTotalPenjualanChart = (filterValue = "") => {
         }
       });
     })
-    .catch(error => console.error("Error loading data: ", error));
 };
 
 // Membuat filter dropdown 
@@ -58,8 +57,6 @@ fetch("data/totalpenjualan.json")
       fetchAndRenderTotalPenjualanChart(selectedType);
     });
   })
-  .catch(error => console.error("Error loading data: ", error));
-
 
 // Fungsi untuk toggle sidebar
 function toggleSidebar() {
@@ -94,7 +91,6 @@ fetch("data/ratarata.json")
       }
     });
   })
-  .catch(error => console.error("Error loading data: ", error));
 
 // Membuat chart untuk jumlah varian
 let jumlahVarianChart;
@@ -151,7 +147,6 @@ const fetchAndRenderJumlahVarianChart = (filterValue = "") => {
         }
       });
     })
-    .catch(error => console.error("Error loading data: ", error));
 };
 
 // Membuat filter dropdown 
@@ -175,7 +170,6 @@ const fetchAndRenderJumlahVarianChart = (filterValue = "") => {
     // Render initial chart with all data
     fetchAndRenderJumlahVarianChart();
   })
-  .catch(error => console.error("Error loading data: ", error));
 
 // Membuat chart untuk varian product per category
 fetch("data/varianproductpercategory.json")
@@ -225,8 +219,7 @@ fetch("data/varianproductpercategory.json")
       }
     });
   })
-  .catch(error => console.error("Error loading data: ", error));
-
+  
 // Membuat chart untuk penjualan bakery
 fetch("data/penjualanbakery.json")
   .then(response => response.json())
@@ -254,7 +247,6 @@ fetch("data/penjualanbakery.json")
       }
     });
   })
-  .catch(error => console.error("Error loading data: ", error));
 
 // Membuat chart untuk penjualan scone per hari
 fetch("data/penjualanscone.json")
@@ -283,7 +275,6 @@ fetch("data/penjualanscone.json")
       }
     });
   })
-  .catch(error => console.error("Error loading data: ", error));
 
 // Membuat chart untuk penjualan drinking chocolate per hari
 fetch("data/drinkingchocolateperhari.json")
@@ -312,7 +303,6 @@ fetch("data/drinkingchocolateperhari.json")
       }
     });
   })
-  .catch(error => console.error("Error loading data: ", error));
 
   // sidebar button
   document.addEventListener('DOMContentLoaded', () => { 
@@ -324,4 +314,21 @@ fetch("data/drinkingchocolateperhari.json")
             link.classList.add('active');
         });
     });
+});
+
+// button sidebar untuk mobile
+document.addEventListener("DOMContentLoaded", function () {
+  var closeBtn = document.getElementById("closebtn");
+  var sidebar = document.getElementById("sidebar");
+  var hamburger = document.getElementById("hamburger");
+
+  closeBtn.addEventListener("click", function () {
+    sidebar.style.display = "none";
+    hamburger.style.display = "block";
+  });
+
+  hamburger.addEventListener("click", function () {
+    sidebar.style.display = "block";
+    hamburger.style.display = "none";
+  });
 });
